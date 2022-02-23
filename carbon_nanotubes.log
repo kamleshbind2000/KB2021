@@ -1,0 +1,112 @@
+2022-02-23 18:35:27,010 INFO executed success
+2022-02-23 21:48:10,986 INFO executed success
+2022-02-23 23:53:37,648 ERROR Error happened
+2022-02-23 23:53:37,665 ERROR Exception occuredcluster1-shard-00-00.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed,cluster1-shard-00-01.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed,cluster1-shard-00-02.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed, Timeout: 30s, Topology Description: <TopologyDescription id: 62162d03e2565ba2af2be16a, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('cluster1-shard-00-00.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-00.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>, <ServerDescription ('cluster1-shard-00-01.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-01.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>, <ServerDescription ('cluster1-shard-00-02.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-02.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>]>
+Traceback (most recent call last):
+  File "<ipython-input-32-5a65ea06cf44>", line 7, in print_data
+    for i in coll1.find():
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\cursor.py", line 1159, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\cursor.py", line 1057, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1603, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1553, in __start_session
+    server_session = self._get_server_session()
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1589, in _get_server_session
+    return self._topology.get_server_session()
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\topology.py", line 530, in get_server_session
+    session_timeout = self._check_session_support()
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\topology.py", line 517, in _check_session_support
+    None)
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\topology.py", line 218, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: cluster1-shard-00-00.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed,cluster1-shard-00-01.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed,cluster1-shard-00-02.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed, Timeout: 30s, Topology Description: <TopologyDescription id: 62162d03e2565ba2af2be16a, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('cluster1-shard-00-00.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-00.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>, <ServerDescription ('cluster1-shard-00-01.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-01.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>, <ServerDescription ('cluster1-shard-00-02.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-02.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>]>
+2022-02-24 00:02:16,875 ERROR Error happened
+2022-02-24 00:02:16,876 ERROR Exception occuredcluster1-shard-00-00.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed,cluster1-shard-00-01.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed,cluster1-shard-00-02.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed, Timeout: 30s, Topology Description: <TopologyDescription id: 62162d03e2565ba2af2be16a, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('cluster1-shard-00-00.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-00.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>, <ServerDescription ('cluster1-shard-00-01.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-01.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>, <ServerDescription ('cluster1-shard-00-02.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-02.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>]>
+Traceback (most recent call last):
+  File "<ipython-input-35-1db7059614e7>", line 7, in insert_data
+    a = coll1.insert_one(dict)
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\collection.py", line 527, in insert_one
+    bypass_doc_val=bypass_document_validation, session=session),
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\collection.py", line 475, in _insert_one
+    acknowledged, _insert_command, session)
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1339, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "C:\Users\KAMLESH\anaconda3\lib\contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1616, in _tmp_session
+    s = self._ensure_session(session)
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1603, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1553, in __start_session
+    server_session = self._get_server_session()
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1589, in _get_server_session
+    return self._topology.get_server_session()
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\topology.py", line 530, in get_server_session
+    session_timeout = self._check_session_support()
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\topology.py", line 517, in _check_session_support
+    None)
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\topology.py", line 218, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: cluster1-shard-00-00.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed,cluster1-shard-00-01.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed,cluster1-shard-00-02.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed, Timeout: 30s, Topology Description: <TopologyDescription id: 62162d03e2565ba2af2be16a, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('cluster1-shard-00-00.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-00.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>, <ServerDescription ('cluster1-shard-00-01.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-01.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>, <ServerDescription ('cluster1-shard-00-02.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-02.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>]>
+2022-02-24 00:06:08,640 INFO this is the start of my code 
+2022-02-24 00:06:39,110 ERROR Error happened
+2022-02-24 00:06:39,110 ERROR Exception occuredcluster1-shard-00-00.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed,cluster1-shard-00-01.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed,cluster1-shard-00-02.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed, Timeout: 30s, Topology Description: <TopologyDescription id: 62162d03e2565ba2af2be16a, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('cluster1-shard-00-00.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-00.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>, <ServerDescription ('cluster1-shard-00-01.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-01.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>, <ServerDescription ('cluster1-shard-00-02.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-02.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>]>
+Traceback (most recent call last):
+  File "<ipython-input-37-c9db55219689>", line 9, in print_data
+    for i in coll1.find():
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\cursor.py", line 1159, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\cursor.py", line 1057, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1603, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1553, in __start_session
+    server_session = self._get_server_session()
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1589, in _get_server_session
+    return self._topology.get_server_session()
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\topology.py", line 530, in get_server_session
+    session_timeout = self._check_session_support()
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\topology.py", line 517, in _check_session_support
+    None)
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\topology.py", line 218, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: cluster1-shard-00-00.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed,cluster1-shard-00-01.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed,cluster1-shard-00-02.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed, Timeout: 30s, Topology Description: <TopologyDescription id: 62162d03e2565ba2af2be16a, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('cluster1-shard-00-00.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-00.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>, <ServerDescription ('cluster1-shard-00-01.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-01.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>, <ServerDescription ('cluster1-shard-00-02.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-02.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>]>
+2022-02-24 00:07:39,781 INFO this is the start of my code 
+2022-02-24 00:08:10,046 ERROR Error happened
+2022-02-24 00:08:10,047 ERROR Exception occuredcluster1-shard-00-00.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed,cluster1-shard-00-01.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed,cluster1-shard-00-02.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed, Timeout: 30s, Topology Description: <TopologyDescription id: 62162d03e2565ba2af2be16a, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('cluster1-shard-00-00.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-00.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>, <ServerDescription ('cluster1-shard-00-01.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-01.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>, <ServerDescription ('cluster1-shard-00-02.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-02.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>]>
+Traceback (most recent call last):
+  File "<ipython-input-39-c9db55219689>", line 9, in print_data
+    for i in coll1.find():
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\cursor.py", line 1159, in next
+    if len(self.__data) or self._refresh():
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\cursor.py", line 1057, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1603, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1553, in __start_session
+    server_session = self._get_server_session()
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\mongo_client.py", line 1589, in _get_server_session
+    return self._topology.get_server_session()
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\topology.py", line 530, in get_server_session
+    session_timeout = self._check_session_support()
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\topology.py", line 517, in _check_session_support
+    None)
+  File "C:\Users\KAMLESH\anaconda3\lib\site-packages\pymongo\topology.py", line 218, in _select_servers_loop
+    (self._error_message(selector), timeout, self.description))
+pymongo.errors.ServerSelectionTimeoutError: cluster1-shard-00-00.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed,cluster1-shard-00-01.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed,cluster1-shard-00-02.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed, Timeout: 30s, Topology Description: <TopologyDescription id: 62162d03e2565ba2af2be16a, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('cluster1-shard-00-00.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-00.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>, <ServerDescription ('cluster1-shard-00-01.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-01.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>, <ServerDescription ('cluster1-shard-00-02.iacci.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('cluster1-shard-00-02.iacci.mongodb.net:27017: [Errno 11001] getaddrinfo failed')>]>
+2022-02-24 00:15:45,433 INFO this is the start of my code 
+2022-02-24 00:15:52,877 INFO print success
+2022-02-24 00:22:49,392 INFO this is the start of my code for update 
+2022-02-24 00:22:49,604 INFO name update  success
+2022-02-24 00:24:02,841 INFO this is the start of my code 
+2022-02-24 00:24:11,909 INFO print success
+2022-02-24 00:29:37,468 INFO this is the start of my code for delete 
+2022-02-24 00:29:37,598 INFO name delete success
+2022-02-24 00:30:50,515 INFO this is the start of my code for print 
+2022-02-24 00:31:01,837 INFO print success
+2022-02-24 00:35:20,900 INFO this is the start of my code for find operation print 
+2022-02-24 00:35:21,184 INFO print find success
+2022-02-24 00:42:25,758 INFO this is the start of my code for filter operation print 
+2022-02-24 00:42:27,304 INFO print filter is  success
